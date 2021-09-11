@@ -146,12 +146,16 @@
                     if (showDateDDMM || showDateMMDD) {
                         let day = offsetTime.getDate();
                         let monthIndex = offsetTime.getMonth() + 1;
+                        var dayName = moment(day, 'DD').format('Do');
+                        var monthName = moment(monthIndex, 'MM').format('MMM');
                         let result;
                         if (showDateDDMM) {
-                            result = day + "/" + monthIndex;
+                            //result = day + "/" + monthIndex;
+                            result = dayName + " " + monthName;
                         }
                         else {
-                            result = monthIndex + "/" + day;
+                            //result = monthIndex + "/" + day;
+                            result = monthName + " " + dayName;
                         }
 
                         // Check if we already have the time in strTime
